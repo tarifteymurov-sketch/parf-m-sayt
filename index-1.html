@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Altun Parfüm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0a0d;--panel:#141217;--ink:#efe7d8;--muted:#9a917f;--gold:#d8b36a;--gold2:#f3dca3;--line:#2a2530;--mx:50vw;--my:30vh}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:300 17px/1.7 Jost,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif;font-weight:400;line-height:1.1}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(560px circle at var(--mx) var(--my),rgba(216,179,106,.09),transparent 65%)}
+header,main,footer{position:relative;z-index:1}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+header{max-width:1100px;margin:0 auto;padding:26px 24px;display:flex;justify-content:space-between;align-items:center}
+.logo{font:400 26px "Bodoni Moda",serif;letter-spacing:.02em}
+.logo i{color:var(--gold);font-size:15px;margin-left:8px}
+nav a{margin-left:28px;color:var(--muted);font-size:15px;transition:color .2s}
+nav a:hover{color:var(--gold2)}
+
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:center;min-height:88vh;padding-bottom:50px}
+.hero h1{font-size:clamp(46px,7.6vw,100px);letter-spacing:-.015em;background:linear-gradient(110deg,var(--ink) 35%,var(--gold2) 50%,var(--ink) 65%);background-size:240% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 9s linear infinite}
+@keyframes sheen{to{background-position:-240% 0}}
+.hero p{max-width:42ch;color:var(--muted);margin:26px 0 36px;font-size:19px}
+.btn{display:inline-block;padding:14px 32px;border:1px solid var(--gold);color:var(--gold2);font-weight:400;letter-spacing:.02em;transition:.3s;background:transparent;cursor:pointer;font:400 16px Jost,sans-serif}
+.btn.fill{background:var(--gold);color:#17110a;margin-right:12px}
+.btn:hover{box-shadow:0 0 34px rgba(216,179,106,.35)}
+.stage{position:relative;display:grid;place-items:center;padding:10px 0}
+.stage::before{content:"";position:absolute;width:min(420px,90%);aspect-ratio:1;border-radius:50%;border:1px solid var(--line);background:radial-gradient(circle,rgba(216,179,106,.16),transparent 68%)}
+.stage .bot{width:min(330px,72vw);position:relative;filter:drop-shadow(0 26px 40px rgba(216,179,106,.22))}
+.hint{position:absolute;bottom:0;color:var(--muted);font-size:14px;font-style:italic}
+
+.bot svg{width:100%;display:block;overflow:visible}
+.bt{transform-box:fill-box;transform-origin:50% 100%}
+.wv{animation:wave 5s linear infinite}
+@keyframes wave{to{transform:translateX(-100px)}}
+
+section{padding:90px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(32px,5vw,54px);margin-bottom:12px}
+.sub{color:var(--muted);max-width:54ch;margin-bottom:34px}
+.tabs{display:flex;gap:26px;margin-bottom:34px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tabs button{background:none;border:0;color:var(--muted);padding:0 0 12px;font:400 16px Jost,sans-serif;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:.2s}
+.tabs button[aria-pressed="true"]{color:var(--gold2);border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:border-color .3s,transform .3s;animation:in .6s ease-out both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.ped{height:270px;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 85%,rgba(216,179,106,.18),transparent 65%);border-bottom:1px solid var(--line)}
+.ped .bot{width:150px}
+.info{padding:22px 24px 24px}
+.info h3{font-size:26px}
+.info p{color:var(--muted);font-size:15px;margin-top:4px}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.price{font:400 22px "Bodoni Moda",serif}
+.row a{color:var(--gold2);border-bottom:1px solid var(--gold);padding-bottom:2px}
+.row a:hover{text-shadow:0 0 14px var(--gold)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;color:var(--muted)}
+.cta{text-align:center;padding:70px 20px;border:1px solid var(--line);background:radial-gradient(520px circle at 50% 0,rgba(216,179,106,.14),transparent 70%),var(--panel)}
+.cta p{color:var(--muted);margin:10px 0 30px}
+.cta .num{font:400 26px "Bodoni Moda",serif;color:var(--gold2);display:block;margin-bottom:26px}
+footer{max-width:1100px;margin:0 auto;padding:30px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
+@media (max-width:760px){.hero,.about{grid-template-columns:1fr}.stage{order:-1}.hero{min-height:auto;padding-top:10px}nav a{margin-left:16px}.btn.fill{margin:0 0 12px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#">Altun<i>Parfüm</i></a>
+  <nav><a href="#kolleksiya">Kolleksiya</a><a href="#haqqimizda">Haqqımızda</a><a href="#sifaris">Əlaqə</a></nav>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <h1>Qoxu da bir imzadır</h1>
+    <p>Orijinal ətirlər, düzgün qiymətlər və sizə uyğun qoxunu tapmaq üçün şəxsi məsləhət. Çatdırılma Bakı daxilində.</p>
+    <a class="btn fill" href="#kolleksiya">Kolleksiyaya bax</a><a class="btn" href="#sifaris">Sifariş ver</a>
+  </div>
+  <div class="stage"><div class="bot" id="hero"></div><span class="hint" id="hint">Siçanı sağa-sola çəkin, ətir tərpənəcək</span></div>
+</div>
+
+<div class="wrap">
+<section id="kolleksiya">
+  <h2>Kolleksiya</h2>
+  <p class="sub">Ətirin üzərinə gətirin, şüşədəki maye tərpənəcək. “Sifariş et” düyməsi mesajı WhatsApp-da hazır açır.</p>
+  <div class="tabs" role="group" aria-label="Filtr">
+    <button data-f="hamısı" aria-pressed="true">Hamısı</button>
+    <button data-f="qadın" aria-pressed="false">Qadın</button>
+    <button data-f="kişi" aria-pressed="false">Kişi</button>
+    <button data-f="uniseks" aria-pressed="false">Uniseks</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="haqqimizda">
+  <h2>Haqqımızda</h2>
+  <div class="about">
+    <p>Altun Parfüm kiçik parfum səhifəsidir. Hər ətiri özümüz seçirik və yalnız orijinal məhsul satırıq.</p>
+    <p>Hansı ətri seçəcəyinizi bilmirsinizsə, yazın. Nə vaxt və harada istifadə edəcəyinizi soruşub uyğun variantı təklif edirik.</p>
+  </div>
+</section>
+
+<section id="sifaris">
+  <div class="cta">
+    <h2>Sifariş və əlaqə</h2>
+    <p>Cavab müddəti: bir neçə dəqiqə. İş saatları: hər gün 10:00–21:00.</p>
+    <a class="num" href="tel:+994706030173">+994 70 603 01 73</a>
+    <a class="btn fill" id="wa" href="#" target="_blank" rel="noopener" style="margin:0">WhatsApp-da yaz</a>
+  </div>
+</section>
+</div>
+</main>
+
+<footer><span>© 2026 Altun Parfüm</span><a href="#">Instagram: @altun.parfum</a></footer>
+
+<script>
+var PHONE="994706030173";
+var items=[
+ {n:"Qızılgül Gecəsi",c:"qadın",t:"Qızılgül, vanil, ənbər",p:89,a:"#f2a7bb",b:"#a8325a",v:"o"},
+ {n:"Dəniz Küləyi",c:"kişi",t:"Bergamot, dəniz duzu, sidr",p:79,a:"#8fd0e0",b:"#1f5f86",v:"t"},
+ {n:"Qara Ud",c:"uniseks",t:"Ud, ədviyyat, dəri",p:129,a:"#9a6fd0",b:"#2a1245",v:"r"},
+ {n:"Şirin Heyva",c:"qadın",t:"Heyva, yasəmən, müşk",p:75,a:"#f6d37a",b:"#c4852a",v:"o"},
+ {n:"Meşə Səhəri",c:"kişi",t:"Şam, ətirşah, yosun",p:85,a:"#a9d49a",b:"#2f6a3d",v:"t"},
+ {n:"Ağ Çay",c:"uniseks",t:"Ağ çay, limon, ağ müşk",p:69,a:"#f1ead2",b:"#b8a77a",v:"r"}
+];
+var root=document.documentElement,grid=document.getElementById("grid");
+var still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+var B=[],gx=0,uid=0;
+
+function wa(n){return "https://wa.me/"+PHONE+(n?"?text="+encodeURIComponent("Salam, "+n+" ətirini sifariş etmək istəyirəm."):"")}
+document.getElementById("wa").href=wa();
+
+// Draws one perfume bottle (SVG) with liquid that can tilt
+function bottle(c1,c2,v){
+  var id="b"+(uid++),
+  body={r:"M52 110h96a14 14 0 0 1 14 14v138a14 14 0 0 1-14 14H52a14 14 0 0 1-14-14V124a14 14 0 0 1 14-14z",
+        o:"M100 108c46 0 74 36 74 86s-28 86-74 86-74-36-74-86 28-86 74-86z",
+        t:"M70 74h60a10 10 0 0 1 10 10v186a10 10 0 0 1-10 10H70a10 10 0 0 1-10-10V84a10 10 0 0 1 10-10z"}[v],
+  T=v==="t"?74:v==="o"?108:110, Bm=278, lv=T+(Bm-T)*.42, mid=T+(Bm-T)*.5,
+  hx={r:56,o:48,t:68}[v];
+  var wv="M-100 "+lv+" q25 -9 50 0"+" t50 0".repeat(11)+" V400 H-100z";
+  return '<svg viewBox="0 0 200 300" aria-hidden="true"><defs>'+
+  '<clipPath id="c'+id+'"><path d="'+body+'"/></clipPath>'+
+  '<linearGradient id="l'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+c1+'"/><stop offset="1" stop-color="'+c2+'"/></linearGradient>'+
+  '<linearGradient id="g'+id+'" x1="0" x2="1"><stop offset="0" stop-color="#8d6a2a"/><stop offset=".5" stop-color="#f3dca3"/><stop offset="1" stop-color="#8d6a2a"/></linearGradient>'+
+  '<linearGradient id="h'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'+
+  '</defs><g class="bt">'+
+  '<path d="'+body+'" fill="rgba(255,255,255,.05)"/>'+
+  '<g clip-path="url(#c'+id+')"><g class="lq" data-p="100 '+lv+'"><g class="wv"><path d="'+wv+'" fill="url(#l'+id+')"/></g></g></g>'+
+  '<path d="'+body+'" fill="none" stroke="rgba(255,255,255,.38)" stroke-width="1.6"/>'+
+  '<rect x="'+hx+'" y="'+(T+14)+'" width="6" height="'+((Bm-T)*.6)+'" rx="3" fill="url(#h'+id+')"/>'+
+  '<rect x="72" y="'+(mid-19)+'" width="56" height="38" fill="rgba(11,10,13,.8)" stroke="#d8b36a" stroke-width=".8"/>'+
+  '<text x="100" y="'+(mid+5)+'" text-anchor="middle" font-family="Bodoni Moda,Georgia,serif" font-style="italic" font-size="16" fill="#f3dca3">Altun</text>'+
+  '<rect x="88" y="'+(T-18)+'" width="24" height="20" fill="#3a2f4d"/>'+
+  '<rect x="73" y="'+(T-62)+'" width="54" height="48" rx="5" fill="url(#g'+id+')"/>'+
+  '</g></svg>';
+}
+
+// Register a bottle for the liquid physics
+function reg(host,glob){
+  var lq=host.querySelector(".lq"),o={lq:lq,bt:host.querySelector(".bt"),px:lq.dataset.p,a:0,v:0,hx:null,g:glob,ph:Math.random()*6};
+  B.push(o);return o;
+}
+
+function render(f){
+  B=B.filter(function(o){return o.g});
+  grid.innerHTML="";
+  items.filter(function(i){return f==="hamısı"||i.c===f}).forEach(function(i,k){
+    var d=document.createElement("article");d.className="card";d.style.animationDelay=(k*80)+"ms";
+    d.innerHTML='<div class="ped"><div class="bot">'+bottle(i.a,i.b,i.v)+'</div></div>'+
+      '<div class="info"><h3>'+i.n+'</h3><p>'+i.t+'</p><div class="row"><span class="price">'+i.p+' ₼</span>'+
+      '<a href="'+wa(i.n)+'" target="_blank" rel="noopener">Sifariş et</a></div></div>';
+    var o=reg(d.querySelector(".bot"),false);
+    d.addEventListener("pointermove",function(e){var r=d.getBoundingClientRect();o.hx=((e.clientX-r.left)/r.width-.5)*2});
+    d.addEventListener("pointerleave",function(){o.hx=null});
+    grid.appendChild(d);
+  });
+}
+document.querySelectorAll(".tabs button").forEach(function(b){
+  b.addEventListener("click",function(){
+    document.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-pressed","false")});
+    b.setAttribute("aria-pressed","true");render(b.dataset.f);
+  });
+});
+
+var hero=document.getElementById("hero");
+hero.innerHTML=bottle("#f0b955","#9a5a14","r");
+reg(hero,true);
+render("hamısı");
+
+if(!still){
+  addEventListener("pointermove",function(e){
+    root.style.setProperty("--mx",e.clientX+"px");root.style.setProperty("--my",e.clientY+"px");
+    gx=e.clientX/innerWidth*2-1;
+  });
+  addEventListener("deviceorientation",function(e){
+    if(e.gamma!=null){gx=Math.max(-1,Math.min(1,e.gamma/30));document.getElementById("hint").textContent="Telefonu əyin, ətir tərpənəcək"}
+  });
+  addEventListener("click",function(){
+    if(window.DeviceOrientationEvent&&typeof DeviceOrientationEvent.requestPermission==="function"){DeviceOrientationEvent.requestPermission().catch(function(){})}
+  },{once:true});
+  (function tick(ts){
+    B.forEach(function(o){
+      var t=o.hx!=null?o.hx:(o.g?gx:0);
+      var target=-t*18+Math.sin(ts/1500+o.ph)*2.5;
+      o.v+=(target-o.a)*.06;o.v*=.9;o.a+=o.v;
+      o.lq.setAttribute("transform","rotate("+o.a.toFixed(2)+" "+o.px+")");
+      o.bt.style.transform="rotate("+(t*7).toFixed(2)+"deg)";
+    });
+    requestAnimationFrame(tick);
+  })(0);
+}
+</script>
+</body>
+</html>
